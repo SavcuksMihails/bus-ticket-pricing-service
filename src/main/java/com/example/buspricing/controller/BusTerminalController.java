@@ -1,9 +1,9 @@
 package com.example.buspricing.controller;
 
+import com.example.buspricing.controller.request.BusTerminalRequest;
 import com.example.buspricing.domain.BusTerminal;
 import com.example.buspricing.repository.BusTerminalRepository;
 import jakarta.validation.Valid;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +22,7 @@ public class BusTerminalController {
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@Valid @RequestBody BusTerminalRequestDto request) {
+    public ResponseEntity<?> create(@Valid @RequestBody BusTerminalRequest request) {
         // Reject if already exists to avoid silent updates
         if (repository.existsById(request.getTerminalName())) {
             return ResponseEntity.status(HttpStatus.CONFLICT)

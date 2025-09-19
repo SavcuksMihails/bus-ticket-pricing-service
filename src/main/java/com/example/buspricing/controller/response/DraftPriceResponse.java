@@ -1,4 +1,4 @@
-package com.example.buspricing.dto;
+package com.example.buspricing.controller.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

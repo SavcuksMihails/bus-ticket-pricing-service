@@ -1,6 +1,9 @@
-package com.example.buspricing.dto;
+package com.example.buspricing.controller.request;
 
-import com.example.buspricing.model.Passenger;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +17,14 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class DraftPriceRequest {
+    @NotBlank
     private String route;
+
+    @NotNull
     private LocalDate date;
+
+    @NotEmpty
+    @Valid
     private List<Passenger> passengers;
 }
+

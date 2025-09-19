@@ -1,4 +1,4 @@
-package com.example.buspricing.controller;
+package com.example.buspricing.controller.request;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BusTerminalRequestDto {
+public class BusTerminalRequest {
     @NotBlank
     private String terminalName;
 
